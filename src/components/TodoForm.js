@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 
 export default function TodoForm(props) {
     const [input, setInput] = useState('')
@@ -14,7 +14,6 @@ export default function TodoForm(props) {
             id: Math.floor(Math.random() * 10000),
             text: input
         })
-        
         setInput('')
     }
 
@@ -22,13 +21,14 @@ export default function TodoForm(props) {
         <form className="todo-form" onSubmit={handleSubmit}>
             <input
                 className="todo-input"
-                type="text"
                 placeholder="Add a todo"
                 value={input}
                 name="text"
                 onChange={handleChange}
             />
-            <button className="todo-button">Add todo</button>
+            <button className="todo-button" onClick={handleSubmit}>
+                Add todo
+            </button>
         </form>
     )
 }
